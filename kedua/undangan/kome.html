@@ -1,0 +1,18 @@
+<script>
+jQuery(document).ready(function($) {
+$('.copy-to-clipboard').on('click', function() {
+var text = '20offproduct'; // replace with the text you want to copy
+var $temp = $('<textarea>');
+$('body').append($temp);
+$temp.val(text).select();
+document.execCommand('copy');
+$temp.remove();
+
+// Update the button text to "Copied!"
+$(this).text('Copied!');
+
+// Add the "clicked" class to the button
+$(this).addClass('clicked');
+});
+});
+</script>
